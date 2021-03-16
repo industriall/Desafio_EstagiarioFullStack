@@ -3,7 +3,7 @@
 Essa etapa servirá para que você possa mostrar todos os seus conhecimentos em desenvolvimento WEB! Como desafio, é esperado que você desenvolva uma página WEB para cadastrar um formulário que chamaremos de Ocorrência (seguir o exemplo da imagem abaixo) e uma API REST para receber os dados do formulário via JSON. Os dados não precisam ser persistidos em um banco de dados. A API deve receber os dados através de uma requisição POST e validar os campos (conforme as regras abaixo). Se houver campos inválidos, deve ser retornado um JSON contendo os erros (conforme o exemplo abaixo). Se os campos forem válidos, deve ser retornado um JSON contendo o id fake gerado para a Ocorrência (conforme o exemplo abaixo). No frontend, após o retorno da requisição, deve ser exibido a(s) mensagem(ns) de sucesso ou erro.
 
 **Observações:**
-- Fique à vontade para utilizar quaisquer técnicas, bibliotecas e frameworks para o backend e frontend. Se você utilizar o .NET Core ou o React, será um diferencial.
+- Fique à vontade para utilizar quaisquer técnicas, bibliotecas e frameworks para o backend e frontend. Se você utilizar o .NET Core e/ou o React, será um diferencial.
 - Não esperamos um sistema completo com persistência de dados. Porém, se fizer, será um diferencial!
 - O esboço da tela abaixo é apenas ilustrativo. Você não precisa fazer a estilização igual. Apenas deve conter os campos presentes na imagem e seguir mais ou menos o layout.
 - A API deve possuir apenas um endpoint pra receber a requisição do tipo POST.
