@@ -14,7 +14,7 @@ Essa etapa servirá para que você possa mostrar todos os seus conhecimentos em 
 |Campo|Regra  |
 |--|--|
 |Título  | É obrigatório e deve possuir no máximo 45 caracteres. |
-|Início | É obrigatório e deve ser uma data válida no formato *dd/MM/yyyy* maior que a data de fim.|
+|Início | É obrigatório e deve ser uma data válida no formato *dd/MM/yyyy* menor que a data de fim.|
 |Fim | É obrigatório e deve ser uma data válida no formato *dd/MM/yyyy* maior que a data de início.|
 | Acontecimentos | É obrigatório e deve ser um array de strings no qual cada string representa o relato de um acontecimento.|
 ---
