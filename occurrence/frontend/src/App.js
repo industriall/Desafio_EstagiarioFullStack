@@ -1,12 +1,13 @@
-import Nav from './components/Nav'
-import OccForm from './components/occForm'
+import Navigation from './components/Nav'
+import OccForm from './components/OccForm'
 
 function App() {
   return (
     <div className="App">
 
+      <Navigation/>
 
-      <Nav/>
+      <h1>Formulário de Ocorrência</h1>
 
       <OccForm/>
 
