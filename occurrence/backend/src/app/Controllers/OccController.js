@@ -12,6 +12,12 @@ class OccController {
 
         return res.json(occurences);
     }
+
+    async deleteAll(req, res) {
+        const occurences = await Occurrence.destroy({
+            where: {}
+        });
+    }
 }
 
 module.exports = new OccController();
