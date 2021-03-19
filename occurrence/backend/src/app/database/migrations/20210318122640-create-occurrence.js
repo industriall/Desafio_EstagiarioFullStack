@@ -24,7 +24,16 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       },
-      // falta o array de acontecimentos
+
+
+
+      events: {
+        type: Sequelize.ARRAY(Sequelize.TEXT),
+        defaultValue: []
+      },
+
+
+      
       created_at: {
         type: Sequelize.DATE,
         allowNull: false
@@ -40,7 +49,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-
-     await queryInterface.dropTable('occurrences');
+    await queryInterface.dropTable('occurrences');
   }
 };

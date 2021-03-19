@@ -6,13 +6,13 @@ class Occurrence extends Sequelize.Model {
             {
                 title: Sequelize.STRING,
                 start: Sequelize.DATE,
-                end: Sequelize.DATE
-                // falta o array de acontecimentos
+                end: Sequelize.DATE,
+                events: Sequelize.ARRAY(Sequelize.TEXT)
             }, {
                 sequelize
             }
         )
-        return this
+        return this;
     }
 }
 
