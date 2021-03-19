@@ -24,16 +24,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       },
-
-
-
       events: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
         defaultValue: []
       },
-
-
-      
       created_at: {
         type: Sequelize.DATE,
         allowNull: false
@@ -42,10 +36,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       },
-
     });
-     
-
   },
 
   down: async (queryInterface, Sequelize) => {
