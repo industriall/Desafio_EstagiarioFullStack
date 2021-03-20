@@ -1,10 +1,41 @@
 const Occurrence = require('../models/Occurrence');
 
-class OccController {
-    async store(req, res) {
-        const occurrence = await Occurrence.create(req.body);
+const { validationResult } = require('express-validator');
 
-        return res.json(occurrence);
+class OccController {
+
+    async store(req, res, next) {
+
+        try {
+            const errors = validationResult(req);
+
+            console.log(errors.array())
+
+            if(!errors.isEmpty()) {
+                const messages = []
+                
+                for(var cont=0; cont<errors.array().length; cont++)
+                    messages.push(errors.array()[cont].msg)
+
+                res.status(400).json({
+                    sucesso: false,
+                    errorMessages: messages
+                })
+
+                return;
+            }
+
+            const occurrence = await Occurrence.create(req.body);
+
+            return res.json({
+                sucesso: true,
+                id: occurrence.id
+            });
+
+        } catch(err) {
+            return next(err);
+        }
+
     }
 
     async index(req, res) {
