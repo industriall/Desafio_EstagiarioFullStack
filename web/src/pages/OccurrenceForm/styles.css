@@ -1,0 +1,136 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.mainContainer form {
+    margin-top: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 3rem;
+    background: var(--color-highlight);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mainContainer p {
+    margin-top: 0.5rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1.2rem;
+}
+
+.dateField {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dateField .field {
+    width: 19rem;
+}
+
+.field input {
+    border: 0;
+    height: 3.1rem;
+    background-color: var(--color-medium-gray);
+    font-family: Karla, sans-serif;
+    font-size: 1.5rem;
+    padding: 0.6rem;
+}
+
+label {
+    font-family: Rubik, sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    padding-bottom: 0.6rem;
+}
+
+textarea {
+    border: 0;
+    background-color: var(--color-medium-gray);
+    font-family: Karla, sans-serif;
+    resize: vertical;
+    font-size: 1.5rem;
+    padding: 0.6rem;
+}
+
+.mainContainer form button {
+    width: 12rem;
+    height: 3.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    place-self: flex-end;
+}
+
+button legend {
+    font-family: Rubik, sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    padding-left: 0.5rem;
+}
+
+.primary {
+    border: 0;
+    background-color: var(--color-dark-gray);
+    color: var(--color-background);
+}
+
+.secondary {
+    border: 0.1rem solid var(--color-dark-gray);
+    background-color: var(--color-background);
+    color: var(--color-dark-gray);
+}
+
+div.occurence-item {
+    min-height: 3.1rem;
+    padding: 0.5rem;
+    border-bottom: 0.05rem solid var(--color-dark-gray);
+    width: 40rem;
+    background-color: var(--color-light-gray);
+    display: flex;
+    align-items: center;
+}
+
+div.occurence-item:first-child {
+    border-top: 0.05rem solid var(--color-dark-gray);
+}
+
+.occurrenceListHeader {
+    display: inline-flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.textButton {
+    text-decoration: none;
+    display: block;
+    font-family: Rubik, sans-serif;
+    color: var(--color-dark-gray);
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+    place-self: flex-end;
+}
+
+.occurrenceList {
+    margin-bottom: 5rem;
+}
+
+footer {
+    margin-top: 5rem;
+}
