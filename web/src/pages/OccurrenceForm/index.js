@@ -61,11 +61,13 @@ function OccurrenceForm() {
     }
 
     const handleEdit = (index) => {
-
+        //Move content to textarea
+        setNewOccurrence(formData.occurrences[index])
+        //It will be added again, so we can delete it
+        handleRemove(index)
     }
 
     const handleRemove = (index) => {
-        console.log(index)
         const updatedOccurrences = [...formData.occurrences]
         updatedOccurrences.splice(index, 1)
         setFormData({ ...formData, occurrences: updatedOccurrences })
