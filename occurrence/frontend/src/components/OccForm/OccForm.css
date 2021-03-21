@@ -1,5 +1,7 @@
 form {
     margin-left: 20px;
+    
+    
 }
 
 fieldset {
@@ -7,11 +9,20 @@ fieldset {
 }
 
 #first-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
 }
 
 #second-row {
     display: flex;
+}
+
+#second-row input {
+    width: 500px;
+}
+
+.event-list {
+    margin-top: 40px;
 }
 
 #add-btn, #submit-btn {
@@ -22,9 +33,11 @@ fieldset {
 
     display: flex;
 
-    height: 35px;
+    /* justify-content: space-between; */
+
+    height: 42px;
     
-    padding-top: 4px;
+    padding-top: 6px;
 }
 
 #add-btn {
@@ -36,16 +49,25 @@ fieldset {
 }
 
 #submit-btn {
-    height: 35px;
     width: 130px;
     padding-left: 10px;
     border-radius: 20px;
 }
 
+#submit-btn p {
+    margin-left: 6px;
+}
+
+#submit-box {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-right: 30px;
+}
+
 ol {
     margin: 10px 0px 0px 10px;
 }
-
 
 #event-form fieldset {
     display: flex;
@@ -54,4 +76,8 @@ ol {
 input {
     border-style: hidden;
     background-color: #FFF;
+}
+
+h2 {
+    margin-top: 4vh;
 }

@@ -1,5 +1,10 @@
 .App {
-  width: 100vw;
+  width: 50vw;
+  margin: auto;
+
+  width: 800px;
+
+
   height: 100vh;
   background: #FFF;
 }

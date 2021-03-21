@@ -15,7 +15,7 @@ class Event extends Component {
                     <p>{this.props.event.text}</p>
                 </div>
 
-                <div id="btns">
+                <div class="Buttons">
                     <button id="edit-event-btn" type="button" onClick={this.props.editEvent}>
                         <HiPencil id="edit-icon" size={24} color="rgb(121, 41, 153)"/>
                     </button>

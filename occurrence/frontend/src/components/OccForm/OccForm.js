@@ -206,24 +206,26 @@ class OccForm extends Component {
                         <div id="add-icone">
                             <HiPlus size={24} color="white"/>
                         </div>
-                        ADICIONAR
+                        <p>ADICIONAR</p>
                     </button>
 
                 </div> {/* end of second row */}
 
-                
-                <EventList 
-                    events={this.state.occurrence.events}
-                    editEventCallback={this.handleEditEvent}
-                    delEventCallback={this.handleDeleteEvent}
+                <div class="event-list">
+                    <EventList 
+                        events={this.state.occurrence.events}
+                        editEventCallback={this.handleEditEvent}
+                        delEventCallback={this.handleDeleteEvent}
                     />
+                </div>
 
                 <br />
-                <button id="submit-btn" type="submit">
-                    <BsCheck id="check-icon" size={24} color="white"/>
-                    SALVAR
-                </button>
-
+                <div id="submit-box">
+                    <button id="submit-btn" type="submit">
+                        <BsCheck id="check-icon" size={24} color="white"/>
+                        <p>SALVAR</p>
+                    </button>
+                </div>
 
                 <br />
                 <Result
