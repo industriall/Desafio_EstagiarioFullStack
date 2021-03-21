@@ -38,16 +38,16 @@ function OccurrenceForm() {
 
     async function handleSubmit(event) {
         event.preventDefault()
-
-        api.post('occur', formData).then((response) => {
+        //Formate dates from YYYY-MM-DD to DD/MM/YYYY
+        const formatedStartDate = formData.start.split('-').reverse().join('/')
+        const formatedEndDate = formData.end.split('-').reverse().join('/')
+        const formatedData = { ...formData, start: formatedStartDate, end: formatedEndDate }
+        api.post('occur', formatedData).then((response) => {
             alert(response.data.id)
         }).catch(error => {
             alert(error.response.data.errorMessages)
         })
-    }
 
-    function wellHandleIt(event) {
-        console.log(event)
     }
 
     return (
@@ -87,10 +87,10 @@ function OccurrenceForm() {
                 <div className='occurrenceList'>
                     {formData.occurrences.length ? formData.occurrences.map((occurrence, index) => {
                         return (
-                            <div key={formData.occurrences.index} className='occurence-item'>
+                            <div key={index} className='occurence-item'>
                                 {occurrence}
                                 <div id='iconCollection'>
-                                    <Edit2 size={30} onClick={wellHandleIt(index)} />
+                                    <Edit2 size={30} />
                                     <Trash2 size={30} />
                                 </div>
 
