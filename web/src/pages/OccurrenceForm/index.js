@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import api from '../../services/api'
-import { Check, Edit2, Plus, Trash2 } from 'react-feather'
+import { AlertCircle, Check, Edit2, Plus, Trash2 } from 'react-feather'
 import './styles.css'
 
 function OccurrenceForm() {
@@ -11,7 +11,7 @@ function OccurrenceForm() {
         occurrences: []
     })
     const [newOccurrence, setNewOccurrence] = useState('')
-
+    const [errors, setErrors] = useState([])
     function handleInputChange(event) {
         const { name, value } = event.target
         setFormData({ ...formData, [name]: value })
@@ -43,9 +43,10 @@ function OccurrenceForm() {
         const formatedEndDate = formData.end.split('-').reverse().join('/')
         const formatedData = { ...formData, start: formatedStartDate, end: formatedEndDate }
         api.post('occur', formatedData).then((response) => {
+            setErrors([])
             alert(response.data.id)
         }).catch(error => {
-            alert(error.response.data.errorMessages)
+            setErrors(error.response.data.errorMessages)
         })
 
     }
@@ -53,8 +54,23 @@ function OccurrenceForm() {
     return (
         <div id='occurrencesForm' className='mainContainer'>
             <h1 id='title'>Formulário de Ocorrências</h1>
-            <p id='info'>Descreva abaixo os detalhes da ocorrencia</p>
+            <p id='info'>Descreva abaixo os detalhes da ocorrência.</p>
 
+            {errors.length !== 0 &&
+                <div id='errors'>
+                    <div id='errorHeader'>
+                        <AlertCircle size={35} /><h4>Houve um problema. Corrija os campos:</h4>
+                    </div>
+                    <ul>
+                        {errors.map((error, index) => {
+                            return (
+                                <li key={index} className='errorItem'>
+                                    {error}
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>}
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <div className='field'>
@@ -87,7 +103,7 @@ function OccurrenceForm() {
                 <div className='occurrenceList'>
                     {formData.occurrences.length ? formData.occurrences.map((occurrence, index) => {
                         return (
-                            <div key={index} className='occurence-item'>
+                            <div key={index} className='occurrenceItem'>
                                 {occurrence}
                                 <div id='iconCollection'>
                                     <Edit2 size={30} />

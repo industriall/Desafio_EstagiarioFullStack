@@ -44,7 +44,6 @@ class OccurController {
 
     async create(req, res) {
         const errors = validationResult(req).formatWith(errorFormatter)
-        console.log(req.body.start)
         if (errors.isEmpty()) {
             //Random hexadecimal id
             const id = crypto.randomBytes(2).toString('hex')
