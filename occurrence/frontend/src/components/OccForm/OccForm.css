@@ -1,0 +1,57 @@
+form {
+    margin-left: 20px;
+}
+
+fieldset {
+    margin-right: 10px;
+}
+
+#first-row {
+    display: flex;
+}
+
+#second-row {
+    display: flex;
+}
+
+#add-btn, #submit-btn {
+    color: #FFF;
+    background: rgb(121, 41, 153);
+
+    font-weight: bold;
+
+    display: flex;
+
+    height: 35px;
+    
+    padding-top: 4px;
+}
+
+#add-btn {
+    width: 150px;
+    padding-left: 5px;
+    border-radius: 5px;
+
+    margin-top: 10px;
+}
+
+#submit-btn {
+    height: 35px;
+    width: 130px;
+    padding-left: 10px;
+    border-radius: 20px;
+}
+
+ol {
+    margin: 10px 0px 0px 10px;
+}
+
+
+#event-form fieldset {
+    display: flex;
+}
+
+input {
+    border-style: hidden;
+    background-color: #FFF;
+}

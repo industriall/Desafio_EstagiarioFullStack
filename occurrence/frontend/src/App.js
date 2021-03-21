@@ -1,15 +1,13 @@
-import Navigation from './components/Nav'
-import OccForm from './components/OccForm'
+import Home from './views/home/home'
+
+import './components/global.css';
+import './App.css'
 
 function App() {
   return (
     <div className="App">
 
-      <Navigation/>
-
-      <h1>Formulário de Ocorrência</h1>
-
-      <OccForm/>
+      <Home />
 
     </div>
   );
