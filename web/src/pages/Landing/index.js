@@ -11,13 +11,16 @@ function Landing() {
             <div id='landingContent'>
                 <h1 id='landingTitle'>Cadastro de Ocorrências</h1>
                 <span />
-                <Link to='/form' className='formLink'><ChevronsRight color="var(--color-background)" size={40} />Começar</Link>
+                <div className='buttonContainer'> <Link to='/form' className='startButton'><ChevronsRight color="var(--color-background)" size={40} />Começar</Link></div>
+
             </div>
-            <Square background='var(--color-background)' right='-300px' top='0px' />
-            <Square background='var(--color-highlight)' right='-317px' top='3px' transform='rotate(240deg)' />
-            <Square background='var(--color-background)' right='-370px' top='18px' />
-            <Square background='var(--color-highlight)' right='-390px' top='21px' transform='rotate(330deg)' />
-            <Square background='var(--color-background)' right='-446px' top='31px' />
+            <div className='squareSquad'>
+                <Square background='var(--color-background)' left='1500px' top='0px' />
+                <Square background='var(--color-highlight)' left='1516px' top='4px' transform='rotate(240deg)' />
+                <Square background='var(--color-background)' left='1565px' top='14px' />
+                <Square background='var(--color-highlight)' left='1581px' top='18px' transform='rotate(330deg)' />
+                <Square background='var(--color-background)' left='1630px' top='29px' />
+            </div>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import './styles.css'
 
 const Square = (props) => {
     return (
-        <div className='square' style={{ background: props.background, right: props.right, transform: props.transform, top: props.top }}></div>
+        <div className='square' style={{ background: props.background, left: props.left, transform: props.transform, top: props.top }}></div>
     )
 }
 
