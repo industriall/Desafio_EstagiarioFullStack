@@ -45,13 +45,19 @@ function OccurrenceForm() {
         const formatedStartDate = formData.start.split('-').reverse().join('/')
         const formatedEndDate = formData.end.split('-').reverse().join('/')
         const formatedData = { ...formData, start: formatedStartDate, end: formatedEndDate }
+
         api.post('occur', formatedData).then((response) => {
             setErrors([])
             alert(response.data.id)
-            history.push('/')
+            history.push('/check')
         }).catch(error => {
-            setErrors(error.response.data.errorMessages)
+            //In case backend connection doesn't even exist
+            if (error.response) {
+                setErrors(error.response.data.errorMessages)
+            }
+            history.push('/problem')
         })
+
 
     }
 
