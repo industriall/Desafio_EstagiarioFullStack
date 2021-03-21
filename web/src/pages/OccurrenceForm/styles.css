@@ -198,3 +198,9 @@ footer {
         width: 100%;
     }
 }
+
+.infoScreen {
+    position: absolute;
+    bottom: 100vh;
+    transition: all 0.5s;
+}
