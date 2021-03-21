@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "express-csp-header": "^4.1.0",
     "express-validator": "^6.10.0",
     "pg": "^8.5.1",
     "sequelize": "^6.5.1"

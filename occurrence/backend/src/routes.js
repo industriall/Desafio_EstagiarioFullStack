@@ -1,19 +1,9 @@
 const Router = require('express');
-const { store } = require('./app/Controllers/OccController'); // precisa?
-const { check, body, validationResult } = require('express-validator');
+const { body } = require('express-validator');
 
 const routes = new Router();
 
 const OccController = require('./app/Controllers/OccController');
-
-// routes.post(
-//     '/occurrences', 
-//     body('title', 'Sem título').exists().notEmpty(),
-//     body('start', 'Data de início inválida').exists(),
-//     body('end', 'Data de fim inválida').exists(),
-//     body('events', 'Sem título').exists().notEmpty(),
-//     OccController.store
-//     );
 
 routes.post(
     '/occurrences',
@@ -26,21 +16,45 @@ routes.post(
         
     }).withMessage('O título possui mais de 5 caracteres'),
 
-    body('start', 'Data de início inválida').exists(),
+    body('start').custom(value => {
 
-    body('end').custom((value, { req }) => {
+        if(value === undefined || value === "")
+            return false;
+        return true;
+
+    }).withMessage('Data de início vazia ou desatualizada.'),
+
+    body('end').custom(value => {
+
+        if(value === undefined || value === "")
+            return false;
+        return true;
+
+    }).withMessage('Data de final vazia ou desatualizada.')
+    .custom((value, { req }) => {
+
+        // evita repetir mensagem de erro
+        if(value === undefined || value === "")
+            return true;
 
         if(req.body.start > value)
-            return false; // informa erro
-        return true; // sem erro
+            return false; // inicio > final
+            
+        return true; // inicio < final (correto)
 
     }).withMessage('A data de início é maior que a data final'),
 
-    body('events', 'Nenhum acontecimento adicionado.').exists().notEmpty(),
+    body('events').custom(value => {
+
+        if(value === undefined || value.length===0)
+            return false;
+
+        return true;
+
+    }).withMessage('Nenhum acontecimento adicionado.'),
+
     OccController.store
     );
-
-
 
 
 routes.get('/occurrences', OccController.index);

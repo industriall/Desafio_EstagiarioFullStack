@@ -9,8 +9,6 @@ class OccController {
         try {
             const errors = validationResult(req);
 
-            console.log(errors.array())
-
             if(!errors.isEmpty()) {
                 const messages = []
                 

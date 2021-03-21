@@ -101,7 +101,7 @@ bluebird@^3.7.2:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
 
-body-parser@1.19.0, body-parser@^1.19.0:
+body-parser@1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
   integrity sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==
@@ -316,6 +316,11 @@ crypto-random-string@^2.0.0:
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-2.0.0.tgz#ef2a7a966ec11083388369baa02ebead229b30d5"
   integrity sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==
 
+csp-header@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/csp-header/-/csp-header-2.2.0.tgz#cb1f83179b2e5b43f5759281458357b22511a626"
+  integrity sha512-uxhyJpDpH1yuqjMLz2Ve8OXsjkVzRtJ0skXxVUx81iUBbTbd5qBYwwKOZ6WXZFGveM2pAb/fHwtDJb5T42URMA==
+
 d@1, d@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/d/-/d-1.0.1.tgz#8698095372d58dbee346ffd0c7093f99f8f9eb5a"
@@ -489,6 +494,14 @@ event-emitter@^0.3.5:
   dependencies:
     d "1"
     es5-ext "~0.10.14"
+
+express-csp-header@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/express-csp-header/-/express-csp-header-4.1.0.tgz#0ce723d9ef1c74d1a46e1cfb3e483af09c60d6d3"
+  integrity sha512-es9RwKPRriINOhJoMGhw6Iz5Ia/SrjHMfxgsNlje08gbPukdfi5S5kLMpUVTwQ1MPp5tmRhvIdkq2SMisPA6Wg==
+  dependencies:
+    csp-header "^2.2.0"
+    psl "^1.8.0"
 
 express-validator@^6.10.0:
   version "6.10.0"
@@ -1286,6 +1299,11 @@ pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
   integrity sha1-8FKijacOYYkX7wqKw0wa5aaChrM=
+
+psl@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/psl/-/psl-1.8.0.tgz#9326f8bcfb013adcc005fdff056acce020e51c24"
+  integrity sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==
 
 pstree.remy@^1.1.7:
   version "1.1.8"
