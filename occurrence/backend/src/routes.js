@@ -14,7 +14,7 @@ routes.post(
             return false;
         return true;
         
-    }).withMessage('O título possui mais de 5 caracteres'),
+    }).withMessage('O título possui mais de 45 caracteres'),
 
     body('start').custom(value => {
 
