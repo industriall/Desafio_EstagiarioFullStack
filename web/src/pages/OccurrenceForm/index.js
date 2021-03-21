@@ -31,6 +31,7 @@ function OccurrenceForm() {
             return
         }
         const addedOccurrence = [...formData.occurrences, newOccurrence]
+        setNewOccurrence('')
         setFormData({ ...formData, occurrences: addedOccurrence })
     }
 
@@ -57,8 +58,17 @@ function OccurrenceForm() {
             }
             history.push('/problem')
         })
+    }
 
+    const handleEdit = (index) => {
 
+    }
+
+    const handleRemove = (index) => {
+        console.log(index)
+        const updatedOccurrences = [...formData.occurrences]
+        updatedOccurrences.splice(index, 1)
+        setFormData({ ...formData, occurrences: updatedOccurrences })
     }
 
     return (
@@ -100,7 +110,7 @@ function OccurrenceForm() {
 
                     <div className='field'>
                         <label htmlFor='addOccurrence'>Adicionar Acontecimento</label>
-                        <textarea onChange={handleNewOccurrence} rows='4' name='addOccurrence' id='addOccurrence' />
+                        <textarea value={newOccurrence} onChange={handleNewOccurrence} rows='4' name='addOccurrence' id='addOccurrence' />
                     </div>
                 </fieldset>
 
@@ -116,8 +126,8 @@ function OccurrenceForm() {
                             <div key={index} className='occurrenceItem'>
                                 {occurrence}
                                 <div id='iconCollection'>
-                                    <Edit2 size={30} />
-                                    <Trash2 size={30} />
+                                    <Edit2 size={30} onClick={() => handleEdit(index)} />
+                                    <Trash2 size={30} onClick={() => handleRemove(index)} />
                                 </div>
 
                             </div>
