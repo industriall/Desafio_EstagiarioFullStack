@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import api from '../../services/api'
-import { Check, Plus } from 'react-feather'
+import { Check, Edit2, Plus, Trash2 } from 'react-feather'
 import './styles.css'
 
 function OccurrenceForm() {
@@ -8,12 +8,32 @@ function OccurrenceForm() {
         title: '',
         start: '',
         end: '',
-        occurrences: ['Essa foi uma situação que ocorreu.', 'Essa foi outra coisa que ocorreu nesse meio tempo. Mas será que deu pra lidar com isso? Será que foi suficiente?', 'E isso?']
+        occurrences: []
     })
+    const [newOccurrence, setNewOccurrence] = useState('')
 
     function handleInputChange(event) {
         const { name, value } = event.target
         setFormData({ ...formData, [name]: value })
+    }
+
+    function handleNewOccurrence(event) {
+        const { value } = event.target
+        setNewOccurrence(value)
+    }
+
+    function addNewOccurrence() {
+        if (newOccurrence.length === 0) {
+            alert('Escreva algum acontecimento antes de adicioná-lo.')
+            return
+        }
+        const addedOccurrence = [...formData.occurrences, newOccurrence]
+        setFormData({ ...formData, occurrences: addedOccurrence })
+    }
+
+    function handleRemoveAll() {
+        const newArray = []
+        setFormData({ ...formData, occurrences: newArray })
     }
 
     async function handleSubmit(event) {
@@ -24,6 +44,10 @@ function OccurrenceForm() {
         }).catch(error => {
             alert(error.response.data.errorMessages)
         })
+    }
+
+    function wellHandleIt(event) {
+        console.log(event)
     }
 
     return (
@@ -50,30 +74,35 @@ function OccurrenceForm() {
 
                     <div className='field'>
                         <label htmlFor='addOccurrence'>Adicionar Acontecimento</label>
-                        <textarea onChange={handleInputChange} rows='4' name='addOccurrence' id='addOccurrence' />
+                        <textarea onChange={handleNewOccurrence} rows='4' name='addOccurrence' id='addOccurrence' />
                     </div>
                 </fieldset>
 
-                <button className='secondary' type='button'><Plus color="var(--color-dark-gray)" size={35} /><legend>Adicionar</legend></button>
+                <button className='secondary' type='button' onClick={addNewOccurrence}><Plus color="var(--color-dark-gray)" size={35} /><legend>Adicionar</legend></button>
 
                 <div className='occurrenceListHeader'>
                     <label htmlFor='occurrences' >Acontecimentos</label>
-                    <a href='/' className='textButton'>Remover todos</a>
+                    <button type='button' onClick={handleRemoveAll} className='textButton'><legend>Remover todos</legend></button>
                 </div>
                 <div className='occurrenceList'>
-                    {formData.occurrences.map((occurrence, index) => {
+                    {formData.occurrences.length ? formData.occurrences.map((occurrence, index) => {
                         return (
-                            <div className='occurence-item' >
+                            <div key={formData.occurrences.index} className='occurence-item'>
                                 {occurrence}
+                                <div id='iconCollection'>
+                                    <Edit2 size={30} onClick={wellHandleIt(index)} />
+                                    <Trash2 size={30} />
+                                </div>
+
                             </div>
                         )
-                    })}
+                    }) : 'Ainda não há acontecimentos. Adicione algum no campo acima.'}
                 </div>
 
                 <button className='primary' type='submit'><Check color="var(--color-background)" size={35} /><legend>Salvar</legend></button>
             </form>
             <footer />
-        </div>
+        </div >
 
     )
 }

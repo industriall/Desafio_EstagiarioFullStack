@@ -2,10 +2,15 @@
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
+    width: 40rem;
 }
 
 .mainContainer form {
     margin-top: 2rem;
+}
+
+p#info {
+    font: 400 1.6rem Karla;
 }
 
 form {
@@ -13,8 +18,10 @@ form {
     flex-direction: column;
 }
 
-h1 {
+h1#title {
     font-size: 3rem;
+    font-weight: 500;
+    font-family: Rubik, sans-serif;
     background: var(--color-highlight);
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -49,6 +56,11 @@ h1 {
     padding: 0.6rem;
 }
 
+input:focus, textarea:focus {
+    border: 0.1rem solid var(--color-dark-gray);
+    border-radius: 0;
+}
+
 label {
     font-family: Rubik, sans-serif;
     font-weight: 500;
@@ -66,6 +78,20 @@ textarea {
     padding: 0.6rem;
 }
 
+.mainContainer form button.textButton {
+    border: 0;
+    font-weight: 400;
+    padding-bottom: 0.6rem;
+    height: fit-content;
+    width: fit-content;
+    background-color: transparent;
+}
+
+.mainContainer form button.textButton legend {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
 .mainContainer form button {
     width: 12rem;
     height: 3.1rem;
@@ -76,7 +102,7 @@ textarea {
     place-self: flex-end;
 }
 
-button legend {
+.mainContainer form button legend {
     font-family: Rubik, sans-serif;
     font-weight: 500;
     font-size: 1.5rem;
@@ -84,13 +110,13 @@ button legend {
     padding-left: 0.5rem;
 }
 
-.primary {
+.mainContainer form button.primary {
     border: 0;
     background-color: var(--color-dark-gray);
     color: var(--color-background);
 }
 
-.secondary {
+.mainContainer form button.secondary {
     border: 0.1rem solid var(--color-dark-gray);
     background-color: var(--color-background);
     color: var(--color-dark-gray);
@@ -100,10 +126,8 @@ div.occurence-item {
     min-height: 3.1rem;
     padding: 0.5rem;
     border-bottom: 0.05rem solid var(--color-dark-gray);
-    width: 40rem;
     background-color: var(--color-light-gray);
     display: flex;
-    align-items: center;
 }
 
 div.occurence-item:first-child {
@@ -112,19 +136,8 @@ div.occurence-item:first-child {
 
 .occurrenceListHeader {
     display: inline-flex;
-    margin-top: 2rem;
     justify-content: space-between;
-}
-
-.textButton {
-    text-decoration: none;
-    display: block;
-    font-family: Rubik, sans-serif;
-    color: var(--color-dark-gray);
-    font-weight: 400;
-    font-size: 1.1rem;
-    padding-bottom: 1rem;
-    place-self: flex-end;
+    margin-top: 30px;
 }
 
 .occurrenceList {
@@ -133,4 +146,28 @@ div.occurence-item:first-child {
 
 footer {
     margin-top: 5rem;
+}
+
+#iconCollection svg {
+    margin-left: 1rem;
+}
+
+#iconCollection {
+    display: flex;
+}
+
+@media (max-width: 700px) {
+    .dateField {
+        display: block;
+    }
+    .dateField .field {
+        width: 100%;
+    }
+    .mainContainer {
+        padding: 0 0.5rem;
+        width: 100%;
+    }
+    div.occurence-item {
+        width: 100%;
+    }
 }

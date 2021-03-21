@@ -23,12 +23,15 @@ body {
     background-color: var(--color-background);
 }
 
-#root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+    font-family: Karla, sans-serif;
+    font-size: 1.5rem;
 }
 
-body, input, textarea {
-    font: 400 1.6rem Karla;
+@media (min-width: 700px) {
+    #root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
