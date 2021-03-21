@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     background: var(--color-highlight);
     overflow: hidden;
@@ -16,4 +17,18 @@
     text-align: center;
     font-size: 4rem;
     margin-left: 2rem;
+}
+
+#infoContainer div {
+    display: flex;
+    align-items: center;
+}
+
+#infoContainer p {
+    color: var(--color-background);
+    font-family: Karla, sans-serif;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem;
 }

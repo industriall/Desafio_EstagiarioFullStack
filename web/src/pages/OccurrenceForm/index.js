@@ -18,6 +18,7 @@ function OccurrenceForm() {
     const [newOccurrence, setNewOccurrence] = useState('')
     const [errors, setErrors] = useState([])
     const [errorInfo, setErrorInfo] = useState(undefined)
+    const [requestID, setRequestID] = useState('')
 
     const handleInputChange = (event) => {
         const { name, value } = event.target
@@ -54,11 +55,11 @@ function OccurrenceForm() {
         api.post('occur', formatedData).then((response) => {
             setErrorInfo(false)
             setErrors([])
-            alert(response.data.id)
+            setRequestID(response.data.id)
             setTimeout(() => {
                 setErrorInfo(undefined)
                 history.push('/')
-            }, 2000)
+            }, 5000)
 
         }).catch(error => {
             //In case backend connection doesn't even exist
@@ -89,7 +90,7 @@ function OccurrenceForm() {
                 <Info icon={attention} iconAlt='Icone de exclamação' content='Houve um problema' />
             </div>
             <div className='infoScreen' style={errorInfo === false ? { bottom: 0 + 'px' } : { bottom: 100 + 'vh' }}>
-                <Info icon={check} iconAlt='Icone de confirmação' content='Salvo' />
+                <Info icon={check} iconAlt='Icone de confirmação' content='Salvo' id={requestID} />
             </div>
             <div id='occurrencesForm' className='mainContainer'>
                 <h1 id='title'>Formulário de Ocorrências</h1>
