@@ -23,8 +23,8 @@ class OccurController {
     validate() {
         return [
             body('title')
-                .notEmpty().withMessage('O título é obrigatório')
-                .isLength({ max: 45 }).withMessage('O título possui mais de 45 caracteres'),
+                .notEmpty().withMessage('O título é obrigatório.')
+                .isLength({ max: 45 }).withMessage('O título possui mais de 45 caracteres.'),
 
             body('occurrences').isArray({ min: 1 }).withMessage('É necessária pelo menos uma ocorrência.'),
             body('occurrences.*').isString().withMessage('As ocorrências devem ser strings.')

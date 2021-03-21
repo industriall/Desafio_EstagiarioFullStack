@@ -1,0 +1,8 @@
+.square {
+    height: 80rem;
+    width: 80rem;
+    transform: rotate(240deg);
+    background-color: var(--color-background);
+    z-index: 0;
+    position: fixed;
+}

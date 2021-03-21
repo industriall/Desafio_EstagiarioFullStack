@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
-import api from '../../services/api'
 import { AlertCircle, Check, Edit2, Plus, Trash2 } from 'react-feather'
+import { useHistory } from 'react-router-dom'
+
+import api from '../../services/api'
 import './styles.css'
 
 function OccurrenceForm() {
+    const history = useHistory()
     const [formData, setFormData] = useState({
         title: '',
         start: '',
@@ -45,6 +48,7 @@ function OccurrenceForm() {
         api.post('occur', formatedData).then((response) => {
             setErrors([])
             alert(response.data.id)
+            history.push('/')
         }).catch(error => {
             setErrors(error.response.data.errorMessages)
         })
