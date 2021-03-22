@@ -1,0 +1,16 @@
+.App {
+  width: 50vw;
+  margin: auto;
+
+  width: 800px;
+
+
+  height: 100vh;
+  background: #FFF;
+}
+
+h1 {
+  text-shadow: 2.5px 2.5px #6d6d6d96;
+  text-align: center;
+  color: black;
+}
