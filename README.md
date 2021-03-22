@@ -1,5 +1,5 @@
 ## Como executar o projeto?
-Basta acessar o diretório WEB e digitar: 
+Basta instalar as dependências de cada pasta (/web e /server), acessar o diretório WEB e digitar: 
 
 ```
 npm start
