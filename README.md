@@ -1,3 +1,17 @@
+## Como executar o projeto?
+Basta instalar as dependências de cada pasta (/web e /server), acessar o diretório WEB e digitar: 
+
+```
+npm start
+```
+
+## Mock-up
+Antes de iniciar o projeto eu fiz um mock-up no Figma a fim de gastar menos tempo com testes estéticos.
+
+- [Páginas](https://www.figma.com/file/gkuD6lwGJ2OHL1mlbxYd2n/Desafio-iALL?node-id=0%3A1)
+- [Apresentação](https://www.figma.com/proto/gkuD6lwGJ2OHL1mlbxYd2n/Desafio-iALL?node-id=10%3A5&viewport=482%2C400%2C0.5325632095336914&frame-preset-name=Desktop&scaling=min-zoom)
+___
+
 ## Visão Geral - O que é esperado?
 
 Essa etapa servirá para que você possa mostrar todos os seus conhecimentos em desenvolvimento WEB! Como desafio, é esperado que você desenvolva uma página WEB para cadastrar um formulário que chamaremos de Ocorrência (seguir o exemplo da imagem abaixo) e uma API REST para receber os dados do formulário via JSON. Os dados não precisam ser persistidos em um banco de dados. A API deve receber os dados através de uma requisição POST e validar os campos (conforme as regras abaixo). Se houver campos inválidos, deve ser retornado um JSON contendo os erros (conforme o exemplo abaixo). Se os campos forem válidos, deve ser retornado um JSON contendo o id fake gerado para a Ocorrência (conforme o exemplo abaixo). No frontend, após o retorno da requisição, deve ser exibido a(s) mensagem(ns) de sucesso ou erro.

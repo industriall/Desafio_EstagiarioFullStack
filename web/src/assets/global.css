@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Rubik:wght@400;500&display=swap');
+:root {
+    --color-background: #F2F2F5;
+    --color-light-gray: #E5E5E5;
+    --color-medium-gray: #C4C4C4;
+    --color-dark-gray: #222222;
+    --color-red: #DA434C;
+    --color-highlight: linear-gradient(222.15deg, #5FC4FF -3.36%, #7543FF 103.5%);
+    ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: 0;
+}
+
+body {
+    background-color: var(--color-background);
+}
+
+body {
+    font-family: Karla, sans-serif;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 700px) {
+    #root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,206 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    width: 40rem;
+}
+
+.mainContainer form {
+    margin-top: 2rem;
+}
+
+p#info {
+    font: 400 1.6rem Karla;
+}
+
+#errors {
+    border: 0.1rem solid var(--color-dark-gray);
+    padding: 0.6rem;
+    margin-top: 2rem;
+}
+
+#errorHeader {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+#errorHeader h4 {
+    margin-left: 0.5rem;
+    font-family: Rubik, sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.errorItem {
+    margin-left: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1#title {
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: Rubik, sans-serif;
+    background: var(--color-highlight);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mainContainer p {
+    margin-top: 0.5rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1.2rem;
+}
+
+.dateField {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dateField .field {
+    width: 19rem;
+}
+
+.field input {
+    border: 0;
+    height: 3.1rem;
+    background-color: var(--color-medium-gray);
+    font-family: Karla, sans-serif;
+    font-size: 1.5rem;
+    padding: 0.6rem;
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    border: 0.1rem solid var(--color-dark-gray);
+    border-radius: 0;
+}
+
+label {
+    font-family: Rubik, sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    padding-bottom: 0.6rem;
+}
+
+textarea {
+    border: 0;
+    background-color: var(--color-medium-gray);
+    font-family: Karla, sans-serif;
+    resize: vertical;
+    font-size: 1.5rem;
+    padding: 0.6rem;
+}
+
+.mainContainer form button.textButton {
+    border: 0;
+    font-weight: 400;
+    padding-bottom: 0.6rem;
+    height: fit-content;
+    width: fit-content;
+    background-color: transparent;
+}
+
+.mainContainer form button.textButton legend {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.mainContainer form button {
+    width: 12rem;
+    height: 3.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    place-self: flex-end;
+}
+
+.mainContainer form button legend {
+    font-family: Rubik, sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    padding-left: 0.5rem;
+}
+
+.mainContainer form button.primary {
+    border: 0;
+    background-color: var(--color-dark-gray);
+    color: var(--color-background);
+}
+
+.mainContainer form button.secondary {
+    border: 0.1rem solid var(--color-dark-gray);
+    background-color: var(--color-background);
+    color: var(--color-dark-gray);
+}
+
+div.occurrenceItem {
+    min-height: 3.1rem;
+    padding: 0.5rem;
+    border-bottom: 0.05rem solid var(--color-dark-gray);
+    background-color: var(--color-light-gray);
+    display: flex;
+    justify-content: space-between;
+    word-break: break-word;
+}
+
+div.occurrenceItem:first-child {
+    border-top: 0.05rem solid var(--color-dark-gray);
+}
+
+.occurrenceListHeader {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.occurrenceList {
+    margin-bottom: 5rem;
+}
+
+footer {
+    margin-top: 5rem;
+}
+
+#iconCollection svg {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+#iconCollection {
+    display: flex;
+}
+
+@media (max-width: 700px) {
+    .dateField {
+        display: block;
+    }
+    .dateField .field {
+        width: 100%;
+    }
+    .mainContainer {
+        padding: 0 0.5rem;
+        width: 100%;
+    }
+    div.occurrenceItemitem {
+        width: 100%;
+    }
+}
+
+.infoScreen {
+    position: absolute;
+    bottom: 100vh;
+    transition: all 0.4s;
+}
