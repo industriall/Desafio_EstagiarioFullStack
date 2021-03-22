@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { AlertCircle, Check, Edit2, Plus, Trash2 } from 'react-feather'
 import { useHistory } from 'react-router-dom'
-import attention from '../../assets/attention.svg'
-import check from '../../assets/check.svg'
+
+//import attention from '../../assets/attention.svg'
+import attention from '../../assets/attention.json'
+//import check from '../../assets/check.svg'
+import check from '../../assets/check.json'
+
 import Info from '../../components/Info'
 import api from '../../services/api'
 import './styles.css'
@@ -54,7 +58,6 @@ function OccurrenceForm() {
 
         api.post('occur', formatedData).then((response) => {
             setErrorInfo(false)
-            setErrors([])
             setRequestID(response.data.id)
             setTimeout(() => {
                 setErrorInfo(undefined)
@@ -67,11 +70,15 @@ function OccurrenceForm() {
                 setErrors(error.response.data.errorMessages)
             }
             setErrorInfo(true)
-            setTimeout(() => setErrorInfo(undefined), 1500)
+            setTimeout(() => setErrorInfo(undefined), 2000)
         })
     }
 
     const handleEdit = (index) => {
+        if (newOccurrence.length !== 0) {
+            //Don't override stuff written
+            return
+        }
         //Move content to textarea
         setNewOccurrence(formData.occurrences[index])
         //It will be added again, so we can delete it
@@ -87,10 +94,10 @@ function OccurrenceForm() {
     return (
         <>
             <div className='infoScreen' style={errorInfo === true ? { bottom: 0 + 'px' } : { bottom: 100 + 'vh' }}>
-                <Info icon={attention} iconAlt='Icone de exclamação' content='Houve um problema' />
+                <Info animData={attention} play={errorInfo === true} iconAlt='Icone de exclamação' content='Houve um problema' />
             </div>
             <div className='infoScreen' style={errorInfo === false ? { bottom: 0 + 'px' } : { bottom: 100 + 'vh' }}>
-                <Info icon={check} iconAlt='Icone de confirmação' content='Salvo' id={requestID} />
+                <Info animData={check} play={errorInfo === false} iconAlt='Icone de confirmação' content='Salvo' id={requestID} />
             </div>
             <div id='occurrencesForm' className='mainContainer'>
                 <h1 id='title'>Formulário de Ocorrências</h1>
