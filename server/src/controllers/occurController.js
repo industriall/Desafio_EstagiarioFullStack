@@ -1,5 +1,5 @@
-const crypto = require('crypto')
 const moment = require('moment')
+const db = require('../../models')
 
 const { body, validationResult } = require('express-validator')
 
@@ -45,12 +45,15 @@ class OccurController {
     async create(req, res) {
         const errors = validationResult(req).formatWith(errorFormatter)
         if (errors.isEmpty()) {
-            //Random hexadecimal id
-            const id = crypto.randomBytes(2).toString('hex')
+            const { title, start, end, occurrences } = req.body
+            const occurrence = await db.Occurrence.create({
+                title, start, end,
+                occurrences: JSON.stringify(occurrences)
+            })
             return res.send({
                 //Request successful if there were no errors
                 sucesso: errors.isEmpty(),
-                id
+                id: occurrence.id
             })
         } else {
             return res.status(400).json({
