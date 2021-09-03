@@ -8,7 +8,10 @@ Essa etapa servirá para que você possa mostrar todos os seus conhecimentos em 
 - O esboço da tela abaixo é apenas ilustrativo. Você não precisa fazer a estilização igual. Apenas deve conter os campos presentes na imagem e seguir mais ou menos o layout. Se o layout for responsivo será um diferencial.
 - A API deve conter os endpoints necessários para: listar os eventos, abrir o formulário de um evento, criar um evento, editar um evento e deletar um evento.
 
-![Foto](https://lh3.googleusercontent.com/pw/ACtC-3euYg0P_gzc7EQ8zSGHel2Bue2FjvGTVw5yA9VdLIGbEWI_g8cCIUm6shnUu86pHs10xdxvGe90Z7u5lyVjL_zSXytLNQm0G7HdFBZKxdfeOYPKfHwwLDdM3b3FZuTYzdFz2c7LM_ploowjE7B_0a8-=w1605-h903-no?authuser=0)
+<div align="center">
+  <img src="assets/Home%20Page.jpg" alt="Home Page" width="800px"/>
+  <img src="assets/Form%20Page.jpg" alt="Form Page" width="800px"/>
+</div>
 
 ### Validações da API
 
